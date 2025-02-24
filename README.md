@@ -48,42 +48,43 @@ NASA Explorer is a full-stack web application that allows users to explore NASA'
 
 2. ## Environment Variables
 .env file:
-
+ ```bash
 NASA_API_KEY=nasa_api_key_here
 PORT=3000
+```
 
 3. ## Start the Backend Server:
-
+ ```bash
 npm start
 The backend should now be running on http://localhost:3000
+```
 
 ### Frontend Setup
 
 1. ## Navigate to the Frontend Folder:
-
+ ```bash
 cd ../frontend
-
+```
 2. ## Install Dependencies:
-
+ ```bash
 npm install
-
+```
 3. ## Start the Frontend:
-
+ ```bash
 npm run dev
-
+```
 ### Backend API Tests
-
-1. ## Navigate to the Backend Folder:
-
+ ```bash
 cd nasa-api-project/backend
-
+```
 ## Run Tests:
-
+ ```bash
 npm test
+```
 
-Test Files:
-API Endpoints: tests/api.test.js
-nasaService: tests/nasaService.test.js
+## Test Files:
+- API Endpoints: tests/api.test.js
+- nasaService: tests/nasaService.test.js
 
 
 ### Usage
