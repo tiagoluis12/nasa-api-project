@@ -11,6 +11,8 @@ NASA Explorer is a full-stack web application that allows users to explore NASA'
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
+- [Frontend Architecture](#frontend-architecture)
+- [Backend Architecture](#backend-architecture)
 - [Setup and Installation](#setup-and-installation)
   - [Backend Setup](#backend-setup)
   - [Frontend Setup](#frontend-setup)
@@ -23,7 +25,6 @@ NASA Explorer is a full-stack web application that allows users to explore NASA'
 ## Features
 
 - **Search NASA Content:** Browse images, videos, and more using NASA's public APIs.
-- **Favorites and Bookmarking:** Easily save and manage your favorite items using local storage.
 - **Content-Based Image Retrieval:** Discover similar images based on the content currently viewed.
 - **Responsive UI:** Clean and modern interface built with Material UI.
 - **API Proxy:** A Node.js backend to securely handle API requests and errors.
@@ -34,6 +35,44 @@ NASA Explorer is a full-stack web application that allows users to explore NASA'
 - **Backend:** Node.js, Express, Axios, dotenv, cors
 - **Testing:** Jest, Supertest
 - **APIs:** NASA Open API
+
+### Frontend Architecture
+
+# Framework & Libraries:
+The frontend is built with React and styled with Material UI. We use React Router for client-side routing to enable smooth navigation between pages (Home, Detail, Favorites, etc.).
+
+# Key Components:
+
+Home Page: Displays NASA content, allows users to search, filter, and browse images/videos retrieved from NASA APIs via the backend.
+
+# Detail Page: 
+Shows detailed information for a selected content item and retrieves similar images based on content.
+
+# Service Layer:
+The frontend contains service modules (e.g., for API calls) to communicate with the backend, ensuring a clear separation between UI components and data fetching logic.
+
+# Deployment:
+The frontend is built as a static site (using Vite) and deployed on Vercel platform.
+
+### Backend Architecture
+
+# Framework & Libraries:
+The backend is built with Node.js and Express, serving as an API proxy to NASA’s public APIs. It uses Axios for HTTP requests and dotenv to manage environment variables.
+
+# Layered Structure:
+API Routes & Controllers: Handle incoming HTTP requests, process query parameters, and forward requests to the appropriate service methods.
+
+# Domain Services (Business Logic): 
+Contain the core logic for fetching and processing NASA data (e.g., APOD, Mars Rover Photos, EPIC imagery). This layer abstracts away external API details.
+
+# Infrastructure/External Adapters: 
+Modules (like nasaApi) that directly interact with external NASA APIs. This layer ensures that the API keys and other sensitive details are kept secure on the server side.
+
+# Error Handling:
+Global error handling middleware is implemented to capture and respond to runtime errors gracefully.
+
+# Deployment:
+The backend is deployed as a Node.js web service. It’s configured to work with environment variables (such as NASA_API_KEY), and its API endpoints are secured and rate-limited as needed.
 
 ## Setup and Installation
 
