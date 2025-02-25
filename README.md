@@ -2,11 +2,6 @@
 
 NASA Explorer is a full-stack web application that allows users to explore NASA's vast collection of space-related media. The application provides features such as:
 
-- **Content Search:** Query NASA’s open APIs to view Astronomy Picture of the Day (APOD), Mars Rover photos, EPIC images, and more.
-- **Content-Based Image Retrieval:** On the detail page, similar images are fetched based on the current content.
-- **Responsive Design:** A modern, responsive user interface built with React and Material UI.
-- **Backend API Integration:** A Node.js/Express backend that acts as a proxy to NASA’s APIs and handles errors.
-
 ## Table of Contents
 
 - [Features](#features)
@@ -25,7 +20,7 @@ NASA Explorer is a full-stack web application that allows users to explore NASA'
 ## Features
 
 - **Search NASA Content:** Browse images, videos, and more using NASA's public APIs.
-- **Content-Based Image Retrieval:** Discover similar images based on the content currently viewed.
+- **Content-Based Image Retrieval:** Discover similar images based on the content currently viewed. (BONUS)
 - **Responsive UI:** Clean and modern interface built with Material UI.
 - **API Proxy:** A Node.js backend to securely handle API requests and errors.
 
@@ -45,7 +40,7 @@ The frontend is built with React and styled with Material UI. We use React Route
 Home Page: Displays NASA content, allows users to search, filter, and browse images/videos retrieved from NASA APIs via the backend.
 
 - **Detail Page**: 
-Shows detailed information for a selected content item and retrieves similar images based on content.
+Shows detailed information for a selected content item and retrieves similar images based on content. (BONUS)
 
 - **Service Layer**:
 The frontend contains service modules (e.g., for API calls) to communicate with the backend, ensuring a clear separation between UI components and data fetching logic.
@@ -123,7 +118,6 @@ npm test
 ## Test Files:
 - API Endpoints: tests/api.test.js
 - nasaService: tests/nasaService.test.js
-
 
 ### Usage
 Search Content: Use the search bar on the Home page to find NASA images and videos.
