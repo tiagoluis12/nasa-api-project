@@ -1,3 +1,7 @@
+<svg width="798" height="260" viewBox="0 0 798 260" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+
+
+
 # NASA Explorer
 
 NASA Explorer is a full-stack web application that allows users to explore NASA's vast collection of space-related media. This project is part of the coding challenge made by Bounce Insights.
