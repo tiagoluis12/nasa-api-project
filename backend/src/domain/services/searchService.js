@@ -1,15 +1,15 @@
-const axios = require("axios");
+const axios = require('axios');
 
 /**
  * Calls NASA's Image and Video Library Search endpoint
- * @param {string} query      - The search term (e.g. "Orion")
- * @param {string} mediaType  - The media types (e.g. "image,video,audio")
- * @param {string} sortOption - Custom sort option ("date" or "title", etc.)
+ * @param {string} query, The search term (ex "Mars")
+ * @param {string} mediaType, The media types (ex "image,video,audio")
+ * @param {string} sortOption, Custom sort option ("date" or "title")
  */
 exports.searchNasaLibrary = async (query, mediaType, sortOption) => {
   // Fallback defaults
-  const searchQuery = query || "Orion";
-  const mediaTypeQuery = mediaType || "image,video,audio";
+  const searchQuery = query || 'Mars';
+  const mediaTypeQuery = mediaType || 'image,video,audio';
 
   // NASA Images API endpoint
   // Docs: https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf
@@ -23,14 +23,15 @@ exports.searchNasaLibrary = async (query, mediaType, sortOption) => {
   // Example: custom sorting on the server side
   // NASA’s API doesn’t have robust built-in sort for all fields,
   // so you can sort the returned items as needed:
-  if (sortOption === "date") {
+  if (sortOption === 'date') {
     // Sort by date_created (descending)
     items = items.sort((a, b) => {
       const dateA = new Date(a.data[0].date_created);
       const dateB = new Date(b.data[0].date_created);
-      return dateB - dateA; // newest first
+      return dateB - dateA;
     });
-  } else if (sortOption === "title") {
+  } else if (sortOption === 'title') {
+
     // Sort by title (alphabetical)
     items = items.sort((a, b) => {
       const titleA = a.data[0].title?.toLowerCase() || "";
@@ -39,7 +40,6 @@ exports.searchNasaLibrary = async (query, mediaType, sortOption) => {
     });
   }
 
-  // Return the final data structure
   return {
     collection: {
       items,
