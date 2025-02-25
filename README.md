@@ -1,6 +1,6 @@
 # NASA Explorer
 
-NASA Explorer is a full-stack web application that allows users to explore NASA's vast collection of space-related media. This project is part of the coding challenge made by Bouncer Insights.
+NASA Explorer is a full-stack web application that allows users to explore NASA's vast collection of space-related media. This project is part of the coding challenge made by Bounce Insights.
 
 ## Table of Contents
 
